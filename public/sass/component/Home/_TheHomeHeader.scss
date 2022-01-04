@@ -1,0 +1,405 @@
+.garden-header {
+  position: relative;
+  background-image: url("../public/gardenImages/garden-header-1.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  &__container-img-1 {
+    @include position-direction(
+      $position: absolute,
+      $bottom: -10px,
+      $right: 10%
+    );
+    z-index: 3;
+    width: 20%;
+    min-width: 290px;
+    //700px / 16px = 43.75em
+    @media screen and(max-width:43.75em) {
+      //set in middle of screen
+      right: 50%;
+      bottom: -60px;
+      transform: translateX(50%);
+    }
+    //460px / 16px = 28.75em
+    @media screen and(max-width:28.75em) {
+      min-width: 260px;
+    }
+    //400px / 16px =25em  ,//800px / 16px = 50em
+    @media screen and(max-width:25em) and(max-height:50em) {
+      bottom: -150px;
+    }
+    //1100px / 16px = 68.75em and 700px / 16px = 43.75em
+    @media screen and(max-width:68.75em) and(max-height:43.75em) and(orientation:landscape) {
+      bottom: -190px;
+    }
+  }
+  &__img-1 {
+    width: 100%;
+    height: 100%;
+    animation: img1Lift 0.5s backwards;
+  }
+  @keyframes img1Lift {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  &__container-img-5 {
+    @include position-direction($position: absolute, $bottom: 10px, $left: 10%);
+    width: 30%;
+    min-width: 450px;
+    z-index: 3;
+    //700px / 16px = 43.75em
+    @media screen and(max-width:43.75em) {
+      //set in middle of screen
+      left: auto;
+      right: 50%;
+      transform: translateX(50%);
+      bottom: 0px;
+    }
+    //460px / 16px = 28.75em
+    @media screen and(max-width:28.75em) {
+      min-width: 390px;
+    }
+    //400px / 16px =25em  ,//800px / 16px = 50em
+    @media screen and(max-width:25em) and(max-height:50em) {
+      bottom: -70px;
+    }
+    //1100px / 16px = 68.75em and 700px / 16px = 43.75em
+    @media screen and(max-width:68.75em) and(max-height:43.75em) and(orientation:landscape) {
+      bottom: -150px;
+    }
+  }
+  &__img-5 {
+    width: 100%;
+    height: 100%;
+  }
+  &__img-2 {
+    @include position-direction($position: absolute, $bottom: 0, $right: 0);
+    width: 100%;
+    z-index: 4;
+    min-width: 1000px;
+  }
+  &__img-3 {
+    @include position-direction($position: absolute, $right: 0);
+    width: 100%;
+    min-width: 1500px;
+    z-index: 1;
+  }
+  &__img-4 {
+    @include position-direction($position: absolute, $bottom: 0);
+    width: 13%;
+    min-width: 180px;
+    z-index: 2;
+    //600px / 16px  = 37.5em
+    @media screen and(max-width:37.5em) {
+      bottom: -90px;
+    }
+    //400px / 16px =25em ,//800px / 16px = 50em
+    @media screen and(max-width:25em) and(max-height:50em) {
+      bottom: -300px;
+    }
+    //1100px / 16px = 68.75em and 700px / 16px = 43.75em
+    @media screen and(max-width:68.75em) and(max-height:43.75em) and(orientation:landscape) {
+      bottom: -200px;
+    }
+  }
+  &__container-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    width: 50%;
+    font-size: 1rem;
+    //900px / 16px = 56.25em
+    @media screen and(max-width:56.25em) {
+      width: 80%;
+    }
+    //600px / 16px  = 37.5em
+    @media screen and(max-width:37.5em) {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  &__container-content-left {
+    @include position-direction($position: absolute, $left: 50px, $top: 130px);
+    //900px / 16px = 56.25em
+    @media screen and(max-width:56.25em) {
+      @include position-direction($position: absolute, $left: 50%, $top: 70px);
+      transform: translateX(-50%);
+    }
+  }
+  &__container-content-right {
+    @include position-direction($position: absolute, $right: 10%, $top: 130px);
+
+    //900px / 16px = 56.25em
+    @media screen and(max-width:56.25em) {
+      @include position-direction($position: absolute, $right: 50%, $top: 70px);
+      transform: translateX(50%);
+    }
+  }
+  &__title {
+    @include font($family: "mjss", $size: 5vw);
+    margin-bottom: 30px;
+    text-align: center;
+    @extend %background-color-title;
+    //1500px / 16px = 93.75em
+    @media screen and(max-width:93.75em) {
+      font-size: 5.8vw;
+    }
+    //1100px / 16px = 68.75em
+    @media screen and(max-width:68.75em) {
+      font-size: 6.3em;
+    }
+    //900px / 16px = 56.25em
+    @media screen and(max-width:56.25em) {
+      font-size: 5.6em;
+      margin-bottom: 20px;
+    }
+    //600px / 16px  = 37.5em
+    @media screen and(max-width:37.5em) {
+      font-size: 5.1em;
+    }
+    //400px / 16px  = 25em
+    @media screen and(max-width:25em) {
+      font-size: 4.6em;
+      margin-bottom: 10px;
+    }
+    //340px / 16px  = 21.25em
+    @media screen and(max-width:25em) {
+      font-size: 4.2em;
+    }
+    //1100px / 16px = 68.75em and 700px / 16px = 43.75em
+    @media screen and(max-width:68.75em) and(max-height:43.75em) and(orientation:landscape) {
+      margin-bottom: 0;
+    }
+    //1100px / 16px = 68.75em and 700px / 16px = 43.75em
+    @media screen and(max-width:68.75em) and(max-height:43.75em) and(orientation:landscape) {
+      background-image: linear-gradient(
+        to right,
+        $bright-yellow,
+        $dark-yellow,
+        $dark-yellow,
+        $bright-yellow
+      );
+    }
+  }
+  &__title-left {
+    animation: header-left-title 1s 0.3s backwards;
+  }
+  &__title-right {
+    animation: header-right-title 1s 0.3s backwards;
+  }
+  @keyframes header-left-title {
+    0% {
+      transform: translateX(-220px) skewX(-25deg);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.7;
+      transform: translateX(30px) skewX(-25deg);
+    }
+    70% {
+      transform: translateX(-20px) skewX(15deg);
+    }
+    85% {
+      transform: translateX(10px) skewX(7deg);
+    }
+    100% {
+      transform: translateY(0px) skewX(0deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes header-right-title {
+    0% {
+      transform: translateX(220px) skewX(-25deg);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.7;
+      transform: translateX(-30px) skewX(-25deg);
+    }
+    70% {
+      transform: translateX(20px) skewX(15deg);
+    }
+    85% {
+      transform: translateX(-10px) skewX(7deg);
+    }
+    100% {
+      transform: translateY(0px) skewX(0deg);
+      opacity: 1;
+    }
+  }
+  &__description {
+    @include font($family: "iransens", $size: 2.8em);
+    line-height: 1.9;
+    text-align: center;
+    animation: describe 0.6s 0.3s ease-out backwards;
+    //1500px / 16px = 93.75em
+    @media screen and(max-width:93.75em) {
+      font-size: 2.6em;
+    }
+    //1300px / 16px = 81.25em
+    @media screen and(max-width:81.25em) {
+      font-size: 2.5em;
+    }
+    //1200px / 16px = 75em
+    @media screen and(max-width:75em) {
+      font-size: 2.4em;
+    }
+    //1000px / 16px = 62.5em
+    @media screen and(max-width:75em) {
+      font-size: 2.3em;
+    }
+    //900px / 16px = 56.25em
+    @media screen and(max-width:56.25em) {
+      font-size: 1.9em;
+    }
+    //600px / 16px  = 37.5em
+    @media screen and(max-width:37.5em) {
+      font-size: 1.7em;
+    }
+    //400px / 16px  = 25em
+    @media screen and(max-width:25em) {
+      font-size: 1.6em;
+    }
+    //1100px / 16px = 68.75em and 700px / 16px = 43.75em
+    @media screen and(max-width:68.75em) and(max-height:43.75em) and(orientation:landscape) {
+      display: none;
+    }
+  }
+  @keyframes describe {
+    0% {
+      transform: translateY(40%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+
+  &__btn {
+    @include font($family: "btitr", $size: 1.8em);
+    cursor: pointer;
+    position: relative;
+    color: $bright-white;
+    border: none;
+    outline: none;
+    background: $bright-green-2;
+    padding: 10px 25px;
+    margin-top: 30px;
+    animation: scale-1 0.6s 0.8s backwards reverse;
+    &::after {
+      content: "همین حالا شروع کن";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include position-direction(absolute, $bottom: 0, $left: 0);
+      width: 100%;
+      height: 0%;
+      opacity: 0;
+      background-color: $dark-white;
+      color: $bright-green-2;
+      transition: all 0.2s;
+      //1100px / 16px = 68.75em and 700px / 16px = 43.75em
+      @media screen and(max-width:68.75em) and(max-height:43.75em) and(orientation:landscape) {
+        color: #d9480f;
+      }
+    }
+    &:hover::after {
+      transition: all 0.3s;
+      height: 100%;
+      opacity: 1;
+    }
+    //900px / 16px = 56.25em
+    @media screen and(max-width:56.25em) {
+      font-size: 1.4em;
+      margin-top: 20px;
+    }
+    //600px / 16px  = 37.5em
+    @media screen and(max-width:37.5em) {
+      font-size: 1.2em;
+    }
+    //1100px / 16px = 68.75em and 700px / 16px = 43.75em
+    @media screen and(max-width:68.75em) and(max-height:43.75em) and(orientation:landscape) {
+      background-color: #fd7e14;
+      color: black;
+    }
+  }
+  &__btn-left {
+    border-radius: 0 30px 30px;
+    &::after {
+      border-radius: 0 30px 30px;
+    }
+  }
+  &__btn-right {
+    border-radius: 30px 0px 30px 30px;
+    &::after {
+      border-radius: 30px 0px 30px 30px;
+    }
+  }
+  @keyframes header-left-btn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+.header-img-enter-active {
+  animation: img-animate 0.5s;
+}
+.header-img-leave-active {
+  animation: img-animate 0.5s reverse;
+}
+@keyframes img-animate {
+  0% {
+    opacity: 0;
+    transform: translateY(400px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+//700px / 16px = 43.75em
+@media screen and(max-width:43.75em) {
+  @keyframes img-animate {
+    0% {
+      opacity: 0;
+      transform: translate(50%, 400px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(50%, 0px);
+    }
+  }
+}
+
+.header-content-enter-active {
+  animation: content-animate 0.5s;
+}
+.header-content-leave-active {
+  animation: content-animate 0.5s reverse;
+}
+@keyframes content-animate {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}

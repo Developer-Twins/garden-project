@@ -1,0 +1,17 @@
+.garden-home-comment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40em;
+  //800px / 16px = 50em
+  @media screen and(max-width:50em) {
+    padding-top: 85em;
+  }
+}
+
+.garden-home-comment__subtitle.active {
+  animation: scroll-animate-subtitle 1.5s ease reverse forwards;
+}
+.garden-home-comment__subtitle.active + .garden-home-comment__title {
+  animation: scale-1 1s ease-out reverse forwards;
+}

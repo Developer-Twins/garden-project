@@ -1,0 +1,199 @@
+.garden-home-counter {
+  padding: 55px 20px;
+  background-image: url("../public/gardenImages/garden-home-counter-1.jpg");
+  background-position: 0px -90px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: local;
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include position-direction($position: absolute, $right: 50%);
+  border-radius: 5px;
+  transform: translate(50%, -50%);
+  box-shadow: 0px 20px 50px -15px rgba(0, 0, 0, 0.7);
+  @media screen and (max-width: 1850px) {
+    background-position: 0px 0px;
+  }
+  //800px / 16px = 50em
+  @media screen and(max-width:50em) {
+    padding: 50px 40px;
+  }
+}
+.garden-home-conatiner {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  align-items: center;
+  column-gap: 50px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0px 100px 0px 350px;
+  width: 0px;
+  height: 0px;
+  width: 1350px;
+  height: 300px;
+  border-radius: 5px;
+  transform: scaleX(0);
+  box-shadow: inset 0px 0px 5px 0px rgba(#0d3c00, 0.7);
+
+  &__counter-container {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    //800px / 16px = 50em
+    @media screen and(max-width:50em) {
+      min-width: 125px;
+    }
+  }
+
+  &__counter-container:nth-of-type(2) {
+    transition: all 0.6s 0.3s;
+  }
+  &__counter-container:nth-of-type(3) {
+    transition: all 0.6s 0.6s;
+  }
+  &__counter-container:nth-of-type(4) {
+    transition: all 0.6s 0.9s;
+  }
+  &__counter-container:nth-of-type(5) {
+    transition: all 0.6s 1.2s;
+  }
+  &__counter-icon {
+    font-size: 5em;
+    color: $light-green-1;
+  }
+  &__counter-number {
+    font-size: 4em;
+    margin: 20px 0px 20px;
+    //1370px / 16px = 85.625em
+    @media screen and (max-width: 85.625em) {
+      font-size: 3.8em;
+    }
+  }
+  &__counter-title {
+    @include font($family: "mjss", $size: 2em);
+    color: $light-green-2;
+    //1370px / 16px = 85.625em
+    @media screen and (max-width: 85.625em) {
+      font-size: 1.7em;
+    }
+  }
+
+  &__img-container {
+    width: 300px;
+    height: 350px;
+    @include position-direction($position: absolute, $bottom: 0, $left: 0);
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.4s 1.4s;
+
+    //800px / 16px = 50em
+    @media screen and(max-width:50em) {
+      @include position-direction($position: absolute, $bottom: 0, $left: 50%);
+      transform: translate(-50%, -100%);
+    }
+    //800px / 16px = 50em
+    @media screen and(max-width:25em) {
+      width: 250px;
+      height: 300px;
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  //1265px / 16px = 79.0625em
+  @media screen and (max-width: 79.0625em) {
+    padding: 0px 60px 0px 320px;
+  }
+  //1100px / 16px = 68.75em
+  @media screen and(max-width:68.75em) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 50px;
+    padding: 30px 60px 30px 320px;
+    height: 450px;
+  }
+  //800px / 16px = 50em
+  @media screen and(max-width:50em) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 60px;
+    padding: 30px 60px 30px 320px;
+    height: auto;
+    width: auto;
+    padding: 30px 35% 390px 35%;
+  }
+  //500px / 16px = 31.25em
+  @media screen and(max-width:31.25em) {
+    padding: 30px 30% 390px 30%;
+  }
+}
+.garden-home-counter.active .garden-home-conatiner {
+  animation: scale-3 1s reverse forwards;
+}
+.garden-home-counter.active
+  .garden-home-conatiner
+  .garden-home-conatiner__counter-container {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+.garden-home-counter.active
+  .garden-home-conatiner
+  .garden-home-conatiner__img-container {
+  animation: transform-2 0.8s 1.4s reverse forwards;
+  //800px / 16px = 50em
+  @media screen and(max-width:50em) {
+    animation: transform-responsive 0.8s 1.4s reverse forwards;
+  }
+}
+
+@keyframes transform-responsive {
+  0% {
+    transform: translate(-50%, 0%);
+    opacity: 1;
+  }
+
+  4% {
+    transform: translate(-50%, -1.54%);
+  }
+
+  8% {
+    transform: translate(-50%, -0.66%);
+  }
+
+  18% {
+    transform: translate(-50%, -6.25%);
+  }
+
+  26% {
+    transform: translate(-50%, -1.63%);
+  }
+
+  46% {
+    transform: translate(-50%, -24.98%);
+  }
+
+  64% {
+    transform: translate(-50%, -1.99%);
+    opacity: 1;
+  }
+
+  76% {
+    transform: translateY(-50%, -56.44%);
+  }
+
+  88% {
+    transform: translateY(-50%, -89.11%);
+  }
+
+  100% {
+    transform: translateY(-50%, -100%);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,193 @@
+.garden-home-service {
+  position: relative;
+  overflow: hidden;
+  padding: 15em 0;
+  width: 100%;
+  background-image: url("../public/gardenImages/garden-home-service-5.jpg");
+  background-repeat: repeat;
+  background-size: 100%;
+  background-position: 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__btn {
+    @include font($family: "btitr", $size: 1.5em);
+    cursor: pointer;
+    position: relative;
+    color: $bright-white;
+    border: none;
+    outline: none;
+    background: $bright-green-2;
+    padding: 10px 25px;
+    border-radius: 30px 0px 30px 0px;
+    margin-top: 50px;
+    transition: all .3s;
+    &:hover {
+      border-radius: 0px 30px 0px 30px;
+    }
+  }
+}
+.garden-home-service.active .garden-home-service__subtitle {
+  animation: scroll-animate-subtitle 1.5s ease reverse forwards;
+}
+.garden-home-service.active .garden-home-service__title {
+  animation: scale-1 1s ease-out reverse forwards;
+}
+.garden-home-box-service {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+
+    width: 650px;
+    height: 290px;
+    position: relative;
+  }
+  .garden-home-box-service:nth-of-type(2n) &__content {
+    flex-direction: row-reverse;
+  }
+}
+.garden-home-container-img-service {
+  width: 200px;
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.garden-home-box-service:nth-of-type(odd) .garden-home-box-service__content {
+  transform: translateX(-75px);
+}
+.garden-home-box-service:nth-of-type(even) .garden-home-box-service__content {
+  transform: translateX(75px);
+}
+
+.garden-home-container-text-service {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  &__title {
+    @include font($family: "mjss", $size: 2.5em);
+    margin-bottom: 15px;
+    color: $light-green-2;
+  }
+  &__describe {
+    @include font($family: "iransens", $size: 1.7em);
+    line-height: 2;
+    color: $dark-black;
+    text-align: justify;
+  }
+}
+.garden-home-service__line {
+  position: absolute;
+  z-index: 1000;
+  top: 380px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 69%;
+  background-color: rgb(204, 204, 204);
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #90ca62;
+  }
+}
+.garden-home-service__line.active::after {
+  animation: line-height 5s linear forwards;
+}
+@keyframes line-height {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+.garden-home-service__circle {
+  &-1 {
+    top: 36%;
+  }
+  &-2 {
+    top: 53.5%;
+  }
+  &-3 {
+    top: 71.5%;
+  }
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  z-index: 1100;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: rgb(204, 204, 204);
+}
+.garden-home-service__line.active ~ .garden-home-service__circle {
+  animation: circle-color 0.4s forwards;
+}
+.garden-home-service__line.active ~ .garden-home-service__circle-1 {
+  animation-delay: 1.15s;
+}
+.garden-home-service__line.active ~ .garden-home-service__circle-2 {
+  animation-delay: 2.5s;
+}
+.garden-home-service__line.active ~ .garden-home-service__circle-3 {
+  animation-delay: 4s;
+}
+@keyframes circle-color {
+  to {
+    background-color: $light-green-1;
+  }
+}
+@media screen and (max-width: 950px) {
+  .garden-home-box-service:nth-of-type(odd) .garden-home-box-service__content {
+    transform: translateX(-43px);
+  }
+  .garden-home-box-service:nth-of-type(even) .garden-home-box-service__content {
+    transform: translateX(43px);
+  }
+  .garden-home-box-service__content {
+    width: 520px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .garden-home-box-service:nth-of-type(odd) .garden-home-box-service__content {
+    display: flex;
+    flex-direction: column;
+  }
+  .garden-home-box-service:nth-of-type(even) .garden-home-box-service__content {
+    display: flex;
+    flex-direction: column;
+  }
+  .garden-home-box-service:nth-of-type(odd) .garden-home-box-service__content {
+    transform: translateX(0px);
+    height: auto;
+  }
+  .garden-home-box-service:nth-of-type(even) .garden-home-box-service__content {
+    transform: translateX(0px);
+    height: auto;
+  }
+  .garden-home-service__circle {
+    display: none;
+  }
+  .garden-home-service__line {
+    display: none;
+  }
+}

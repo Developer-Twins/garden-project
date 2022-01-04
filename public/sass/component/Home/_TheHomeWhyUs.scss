@@ -1,0 +1,256 @@
+.garden-home-whyus {
+  padding: 10em 5em;
+  overflow: hidden;
+  background-image: linear-gradient(
+      to right,
+      rgba(230, 230, 230, 0.5),
+      rgba(230, 230, 230, 0.5) 50%,
+      transparent
+    ),
+    url("../public/gardenImages/garden-home-whyus-1.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: right;
+  width: 100%;
+  display: grid;
+  grid-template-columns:
+    [full-start]minmax(50px, 1fr) [center-start] 1150px[center-end] minmax(
+      50px,
+      1fr
+    )
+    [full-end];
+  justify-items: center;
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-auto-rows: 350px;
+    column-gap: 30px;
+    row-gap: 30px;
+    grid-column: center-start/center-end;
+    //750px / 16px = 46.875em
+    @media screen and(max-width:46.875em) {
+      grid-column: full-start/full-end;
+    }
+    //600px / 16px = 37.5em
+    @media screen and(max-width:37.5em) {
+      grid-template-columns: 100%;
+      grid-column: 1/-1;
+      grid-auto-rows: auto;
+    }
+  }
+  //1300px / 16px = 81.25em
+  @media screen and(max-width:81.25em) {
+    grid-template-columns: [full-start] auto [center-start] 70%[center-end] auto [full-end];
+  }
+  //480px / 16px = 30em
+  @media screen and(max-width:30em) {
+    padding: 15em 3em;
+  }
+}
+.garden-home-whyus__subtitle {
+  grid-column: center-start/center-end;
+}
+.garden-home-whyus.active .garden-home-whyus__subtitle {
+  animation: scroll-animate-subtitle 1.5s ease reverse forwards;
+}
+.garden-home-whyus__title {
+  grid-column: center-start/center-end;
+  margin-bottom: 110px;
+
+  //700px / 16px = 43.75em
+  @media screen and(max-width:43.75em) {
+    grid-column: full-start/full-end;
+  }
+}
+.garden-home-whyus.active .garden-home-whyus__title {
+  animation: scale-1 1s ease-out reverse forwards;
+}
+
+.garden-home-box-whyus {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 40px;
+  position: relative;
+  &::before {
+    content: "";
+    @include position-direction($position: absolute, $bottom: 0, $right: 50px);
+    background: url("../public/gardenImages/garden-home-whyus-2.png") no-repeat
+      right;
+    width: 100px;
+    height: 150px;
+  }
+  &::after {
+    content: "";
+    @include position-direction($position: absolute, $bottom: 0px, $left: 0px);
+    background: url("../public/gardenImages/1520611250Line-Of-Grass-PNG-Image.png");
+    background-repeat: no-repeat;
+    background-position: 0 125px;
+    background-size: 100%;
+    width: 100%;
+    height: 200px;
+    //600px / 16px = 37.5em
+    @media screen and(max-width:37.5em) {
+      background-position: 0 150px;
+    }
+  }
+
+  &:hover .garden-home-container-text-whyus__title::before,
+  &:hover .garden-home-container-text-whyus__title::after {
+    width: 50%;
+    transition: all 0.2s 0.2s linear;
+  }
+  &:hover .garden-home-container-text-whyus__describe::after,
+  &:hover .garden-home-container-text-whyus__describe::before {
+    height: 100%;
+    transition: all 0.2s linear;
+  }
+
+  &:hover
+    .garden-home-container-icon-whyus
+    .garden-home-container-icon-whyus__icon,
+  &:hover .garden-home-container-icon-whyus::before {
+    animation-play-state: paused;
+  }
+  //600px / 16px = 37.5em
+  @media screen and(max-width:37.5em) {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  //480px / 16px = 30em
+  @media screen and(max-width:30em) {
+    padding: 40px 20px;
+  }
+}
+.garden-home-box-whyus:nth-of-type(even) {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.5s 0.1s;
+}
+.garden-home-box-whyus:nth-of-type(odd) {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s 0.1s;
+}
+
+.garden-home-box-whyus.active:nth-of-type(even),
+.garden-home-box-whyus.active:nth-of-type(odd) {
+  opacity: 1;
+  transform: translateX(0);
+}
+.garden-home-container-text-whyus {
+  &__title {
+    @include font($family: "mjss", $size: 2.5em);
+    margin-bottom: 15px;
+    color: $bright-green-2;
+    //480px / 16px = 30em
+    @media screen and(max-width:30em) {
+      font-size: 2.3em;
+    }
+
+    &::after {
+      content: "";
+      @include position-direction(absolute, $top: 0, $left: 0);
+      width: 0;
+      height: 3px;
+      background: $light-green-1;
+      transition: all 0.2s linear;
+    }
+
+    &::before {
+      content: "";
+      @include position-direction(absolute, $top: 0, $right: 0);
+      width: 0;
+      height: 3px;
+      background: $light-green-1;
+      transition: all 0.2s linear;
+    }
+  }
+  &__describe {
+    @include font($family: "iransens", $size: 1.6em);
+    line-height: 2;
+    color: $dark-black;
+    text-align: justify;
+    &::before {
+      content: "";
+      @include position-direction(absolute, $bottom: 0, $left: 0);
+      width: 3px;
+      height: 0;
+      background: $light-green-1;
+      transition: all 0.2s 0.2s linear;
+    }
+    &::after {
+      content: "";
+      @include position-direction(absolute, $bottom: 0, $right: 0);
+      width: 3px;
+      height: 0;
+      background: $light-green-1;
+      transition: all 0.2s 0.2s linear;
+    }
+    //600px / 16px = 37.5em
+    @media screen and(max-width:37.5em) {
+      text-align: center;
+      font-size: 1.5em;
+    }
+    //480px / 16px = 30em
+    @media screen and(max-width:30em) {
+      font-size: 1.4em;
+    }
+  }
+}
+.garden-home-container-icon-whyus {
+  width: 100px;
+  height: 120px;
+  position: relative;
+  align-self: center;
+  margin-right: 40px;
+  &__icon {
+    background: #6aaf08;
+    border-radius: 0 59px 47px 54px;
+    height: 90%;
+    font-size: 85px;
+    padding: 0 30px;
+    color: #fff;
+    text-align: center;
+    animation: border-animate 5s linear infinite;
+  }
+  &::before {
+    content: "";
+    background-color: rgba(106, 150, 31, 0.149);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 103px;
+    height: 120px;
+    border-radius: 0 59px 50px 54px;
+    z-index: 1;
+    animation: border-animate 5s linear infinite;
+  }
+  //600px / 16px = 37.5em
+  @media screen and(max-width:37.5em) {
+    margin-right: 0px;
+    margin-bottom: 50px;
+  }
+}
+
+@keyframes border-animate {
+  0% {
+    border-radius: 0 59px 47px 54px;
+  }
+  25% {
+    border-radius: 54px 0px 59px 54px;
+  }
+  50% {
+    border-radius: 47px 54px 0px 59px;
+  }
+  75% {
+    border-radius: 59px 47px 54px 0px;
+  }
+  100% {
+    border-radius: 0 59px 47px 54px;
+  }
+}

@@ -1,0 +1,29 @@
+// %box-shadow-shapes {
+//   box-shadow: 0px 9px 14px rgba($normal-black, 0.5);
+// }
+%sub-title{
+  &::before,
+  &::after {
+    content: "";
+    background-color: $bright-green-1;
+    display: inline-block;
+    position: relative;
+    bottom: 4px;
+    width: 30px;
+    height: 2px;
+    margin: 0px 10px;
+  }
+}
+
+%background-color-title {
+  background-image: linear-gradient(
+    to right,
+    $bright-green-1,
+    $dark-green,
+    $dark-green,
+    $bright-green-1
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}

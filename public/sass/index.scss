@@ -1,0 +1,19 @@
+//basic-style
+@import "./basic/Color";
+@import "./basic/Typography";
+@import "./basic/Mixin";
+@import "./basic/Extend";
+@import "./basic/GlobalAnimate";
+@import "./basic/GlobalStyle";
+
+//components-style
+@import "./component/Home/TheHome";
+@import "./component/Home/TheHomeHeader";
+@import "./component/Home/TheHomeAboutUs";
+@import "./component/Home/TheHomeOurService";
+@import "./component/Home/TheHomeWhyUs";
+@import "./component/Home/TheHomeOurStaff";
+@import "./component/Home/TheHomeCounter";
+@import "./component/Home/TheHomeComment";
+
+

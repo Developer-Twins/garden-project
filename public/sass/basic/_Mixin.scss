@@ -1,0 +1,13 @@
+@mixin font($family, $size, $weight: normal) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+}
+@mixin position-direction($position,$top:null,$bottom:null,$right:null,$left:null) {
+  position: $position;
+  top: $top;
+  bottom: $bottom;
+  right: $right;
+  left: $left;
+}
+
