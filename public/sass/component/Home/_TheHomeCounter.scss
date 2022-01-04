@@ -11,6 +11,7 @@
   justify-content: center;
   align-items: center;
   @include position-direction($position: absolute, $right: 50%);
+  z-index: 1000;
   border-radius: 5px;
   transform: translate(50%, -50%);
   box-shadow: 0px 20px 50px -15px rgba(0, 0, 0, 0.7);

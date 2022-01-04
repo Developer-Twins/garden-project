@@ -1,14 +1,92 @@
 .garden-home-comment {
+  box-sizing: content-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 40em;
+  background-color: #f0f1ec;
+  height: 850px;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 300px;
+    height: 300px;
+    background-repeat: no-repeat;
+  }
+  &::before {
+    @include position-direction(absolute, $top: 58em, $right: 0px);
+    background-image: url("../public/gardenImages/garden-home-comment-1.png");
+  }
+  &::after {
+    @include position-direction(absolute, $bottom: 0px, $left: 0px);
+    background-image: url("../public/gardenImages/garden-home-comment-2.png");
+  }
+  &__bg {
+    &::before,
+    &::after {
+      content: "";
+      background-image: url("../public/gardenImages/garden-home-about-5.png");
+      background-repeat: no-repeat;
+      width: 50%;
+      height: 35%;
+      background-size: 101% 100%;
+      background-position-y: -220px;
+      transition: all 0.6s 0.3s ease-out;
+      //800px / 16px = 50em
+      @media screen and(max-width:50em) {
+        height: 52%;
+      }
+    }
+    &::before {
+      @include position-direction(absolute, $top: 0px, $left: 0px);
+    }
+    &::after {
+      @include position-direction(absolute, $top: 0px, $right: 0px);
+      transform: rotateY(180deg);
+    }
+  }
+  //1400px /16px = 87.5em
+  @media screen and(max-width:87.5em) {
+    &::after,
+    &::before {
+      min-width: 150px;
+      min-height: 150px;
+      width: 20vw;
+      height: 20vw;
+      background-size: cover;
+    }
+  }
   //800px / 16px = 50em
   @media screen and(max-width:50em) {
     padding-top: 85em;
+    &::before {
+      top: 105em;
+    }
+  }
+  //700px /16px = 43.75em
+  @media screen and(max-width:43.75em) {
+    &::before {
+      top: auto;
+      bottom: 0;
+    }
   }
 }
+.garden-home-comment__content {
+  width: 70%;
+  max-width: 1170px;
+  height: 410px;
+  background-color: blanchedalmond;
+}
 
+.garden-home-comment.active .garden-home-comment__bg::after,
+.garden-home-comment.active .garden-home-comment__bg::before {
+  background-position-y: 0px;
+}
+.garden-home-comment__title {
+  margin-bottom: 125px;
+}
 .garden-home-comment__subtitle.active {
   animation: scroll-animate-subtitle 1.5s ease reverse forwards;
 }
