@@ -9,20 +9,9 @@
     </h1>
 
     <div class="garden-home-comment__content">
-      <div class="garden-home-box-comment" v-for="data in datas" :key="data.name">
-        <div class="garden-home-container-text-comment">
-          <p class="garden-home-container-text-comment__describe">{{data.describe}}</p>
-          <p class="garden-home-container-text-comment__name">{{data.name}}</p>
-        </div>
-        <div class="garden-home-container-img-comment">
-          <img
-            class="garden-home-container-icon-commnet__img"
-            src=""
-            alt="someone"
-          />
-        </div>
-      </div>
+      
     </div>
+    
   </section>
 </template>
 
