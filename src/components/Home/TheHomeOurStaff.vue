@@ -14,7 +14,7 @@
             ]"
           >
             <img
-              src="../../../public/gardenImages/grand-home-staff-1.jpg"
+              src="../../../public/gardenImages/garden-home-staff-1.jpg"
               class="home-staff-inform__img"
             />
             <div
@@ -53,7 +53,7 @@
             ]"
           >
             <img
-              src="../../../public/gardenImages/grand-home-staff-2.png"
+              src="../../../public/gardenImages/garden-home-staff-2.png"
               class="home-staff-inform__img"
             />
             <div
@@ -92,7 +92,7 @@
             ]"
           >
             <img
-              src="../../../public/gardenImages/grand-home-staff-3.jpg"
+              src="../../../public/gardenImages/garden-home-staff-3.jpg"
               class="home-staff-inform__img"
             />
             <div
