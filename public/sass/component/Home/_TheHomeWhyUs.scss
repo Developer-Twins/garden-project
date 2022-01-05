@@ -56,7 +56,7 @@
 }
 .garden-home-whyus__title {
   grid-column: center-start/center-end;
-  margin-bottom: 110px;
+  margin-bottom: 2em;
 
   //700px / 16px = 43.75em
   @media screen and(max-width:43.75em) {
