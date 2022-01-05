@@ -1,5 +1,8 @@
 <template>
-  <section :class="[{active:activeCommentContainer},'garden-home-comment']" ref="comment">
+  <section
+    :class="[{ active: activeCommentContainer }, 'garden-home-comment']"
+    ref="comment"
+  >
     <div class="garden-home-comment__bg"></div>
     <h4
       :class="[
@@ -14,16 +17,19 @@
       مردم درباره ما چه می گویند؟
     </h1>
 
-    <div class="garden-home-comment__content"></div>
+    <div class="garden-home-comment__content">
+      
+    </div>
   </section>
 </template>
 
 <script>
+
 export default {
   data() {
     return {
       commentContainer: null,
-      activeCommentContainer:null,
+      activeCommentContainer: null,
       subtitle: null,
       activeSubtitle: null,
       datas: [
