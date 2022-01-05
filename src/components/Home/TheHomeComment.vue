@@ -25,7 +25,7 @@
           :speed="800"
           :breakpoints="breakpoint"
           :autoplay="{
-            delay: 3000,
+            delay: 4000,
             disableOnInteraction: false,
           }"
           :pagination="{
@@ -145,6 +145,8 @@ export default {
 
       if (commentContaineTopPoint < this.$store.getters.getTriggerPoint) {
         this.activeCommentContainer = true;
+      }else{
+        this.activeCommentContainer = false;
       }
     });
   },
