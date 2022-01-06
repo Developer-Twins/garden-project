@@ -6,6 +6,7 @@
   <the-home-our-staff></the-home-our-staff>
   <the-home-counter></the-home-counter>
   <the-home-comment></the-home-comment>
+  <The-home-contact-us></The-home-contact-us>
 </template>
 
 <script>
@@ -16,6 +17,7 @@ import TheHomeWhyUs from './TheHomeWhyUs.vue';
 import TheHomeOurStaff from './TheHomeOurStaff.vue';
 import TheHomeCounter from './TheHomeCounter.vue';
 import TheHomeComment from './TheHomeComment.vue';
+import TheHomeContactUs from './TheHomeContactUs.vue';
 
 export default {
   components:{
@@ -26,6 +28,7 @@ export default {
     TheHomeOurStaff,
     TheHomeCounter,
     TheHomeComment,
+    TheHomeContactUs
   }
 }
 </script>
