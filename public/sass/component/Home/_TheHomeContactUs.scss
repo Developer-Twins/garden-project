@@ -1,67 +1,75 @@
 .garden-home-contact {
-    background-color: #f0f1ec;
+  background-color: #f0f1ec;
   position: relative;
-  height: 580px;
+  height: 620px;
+  // 900px=56.25em
+  @media screen and(max-width:56.25em) {
+    height: 520px;
+  }
+  // 650px=40.62em
+  @media screen and(max-width:40.62em) {
+    height: 480px;
+  }
 }
 $cotact-color: #6a961f;
 .home-contact {
-    position: absolute;
-    left: 50%;
-    bottom: -90px;
-    transform: translateX(-50%);
-    border-radius: 4px;
-    box-shadow: 0 1.5rem 4rem rgba(0,0,0,.2);
-  background-image:url('../public/gardenImages/contact-man.png'), linear-gradient(
-    77deg,
-    $cotact-color 0%,
-    $cotact-color 35%,
-    #f7f7f7 35%
-  );
+  position: absolute;
+  left: 50%;
+  bottom: -90px;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  background-image: url("../public/gardenImages/contact-man.png"),
+    linear-gradient(77deg, $cotact-color 0%, $cotact-color 35%, #f7f7f7 35%);
   background-repeat: no-repeat;
-  background-position: left 20px bottom,center center;
-  background-size: 60%,cover;
+  background-position: left 20px bottom, center center;
+  background-size: 60%, cover;
   display: flex;
   width: 1200px;
   margin: auto;
-  @media screen and(max-width: 1350px){
-      width: 85%;
+  // 1350px=84.37em
+  @media screen and(max-width: 84.37em) {
+    width: 85%;
   }
-  @media screen and(max-width: 800px){
+  // 800px=50em
+  @media screen and(max-width: 800px) {
     background-image: linear-gradient(
         77deg,
-        rgba($cotact-color,.7) 0%,
-        rgba($cotact-color,.7) 35%,
+        rgba($cotact-color, 0.7) 0%,
+        rgba($cotact-color, 0.7) 35%,
         #f7f7f7 35%
-      ),url('../public/gardenImages/back-contact.jpg');
-      background-repeat: no-repeat;
-      background-position: left top, center;
-      background-size:cover;
+      ),
+      url("../public/gardenImages/back-contact.jpg");
+    background-repeat: no-repeat;
+    background-position: left top, center;
+    background-size: cover;
   }
 }
 .home-contact-text {
-//   background-color: rgb(123, 179, 224);
   width: 40%;
   font-size: 1rem;
   margin-right: 3.5em;
-  @media screen and(max-width: 1000px){
+  // 1000px=62.5em
+  @media screen and(max-width: 62.5em) {
     width: 55%;
-}
-  @media screen and(max-width: 900px){
-    font-size: .85rem;
-}
-  @media screen and(max-width: 650px){
-    font-size: .78rem;
+  }
+  // 900px=56.25em
+  @media screen and(max-width: 56.25em) {
+    font-size: 0.85rem;
+  }
+  // 650px=40.62em
+  @media screen and(max-width: 40.62em) {
+    font-size: 0.78rem;
     width: 65%;
     .home-contact-form__comment {
-        width: 90% ;
+      width: 90%;
     }
-
-}
-  @media screen and(max-width: 550px){
+  }
+  // 550px=34.37em
+  @media screen and(max-width: 34.37em) {
     width: 100%;
     margin: 0 2.2em;
-
-}
+  }
 }
 .garden-home-contact__subtitle {
   opacity: 1;
@@ -70,6 +78,7 @@ $cotact-color: #6a961f;
   margin: 2em 0 1.5em;
 }
 .garden-home-contact__title {
+  margin-bottom: 1.8em;
   text-align: center;
   background-image: linear-gradient(
     to right,
@@ -92,37 +101,34 @@ $cotact-color: #6a961f;
   &__name,
   &__email,
   &__comment {
-      margin-bottom: 3em;
-      position: relative;
-      ::placeholder {
-        @include font("iransens", 1em);
-      }
-     
-        input,
-        textarea {
-            width: 100%;
-            border: none;
-            outline: none;
-            font-size: 2em;
-            padding: 0.7em 0.55em 0.7em 0.4em;
-            background-color: #f0f1ec;
-            border-right: 3px solid $cotact-color;
-            box-shadow: .1em .3rem 1.3rem rgba(0, 0, 0, 0.2) inset;
-            transition: border .3s;
-            
-            &:focus{
-                border-right-color: rgb(39, 200, 61);
-                
-        }
-        &:focus + svg{
-                    color: rgb(39, 200, 61);
-                }
-      
+    margin-bottom: 3em;
+    position: relative;
+    ::placeholder {
+      @include font("iransens", 1em);
     }
-        
+
+    input,
+    textarea {
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 2em;
+      padding: 0.7em 0.55em 0.7em 0.4em;
+      background-color: #f0f1ec;
+      border-right: 3px solid $cotact-color;
+      box-shadow: 0.1em 0.3rem 1.3rem rgba(0, 0, 0, 0.2) inset;
+      transition: border 0.3s;
+
+      &:focus {
+        border-right-color: orange;
+      }
+      &:focus + svg {
+        color: orange;
+      }
+    }
 
     svg {
-        transition: color .3s;
+      transition: color 0.3s;
       position: absolute;
       top: 50%;
       left: 0;
@@ -146,7 +152,7 @@ $cotact-color: #6a961f;
     display: flex;
     justify-content: center;
     align-items: center;
-      margin-top: 3em;
+    margin: 4em 0 3em;
     button {
       @include font("btitr", 1.8em);
       cursor: pointer;
@@ -158,6 +164,7 @@ $cotact-color: #6a961f;
       padding: 5px 35px;
       border-radius: 30px 0px 30px 0px;
       transition: all 0.3s;
+      box-shadow: 0 8px 10px rgba(0,0,0,.3);
     }
     button:hover {
       border-radius: 0px 30px 0px 30px;
