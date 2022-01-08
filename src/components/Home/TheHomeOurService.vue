@@ -55,6 +55,7 @@ export default {
       activeLineService: false,
       serviceContainer: null,
       lineService: null,
+      boxes: null,
       informations: [
         {
           title: "اجرای خدمات باغبانی و فضای سبز",
@@ -86,13 +87,22 @@ export default {
   mounted() {
     this.serviceContainer = this.$refs.service;
     this.lineService = this.$refs.lineService;
+    this.boxes = document.querySelectorAll(".garden-home-box-service");
     let serviceContainerTopPoint = null;
     let lineServiceTopPoint = null;
+    let boxTopPint = null;
 
     window.addEventListener("scroll", () => {
       serviceContainerTopPoint = this.serviceContainer.getBoundingClientRect()
-        .top;
+      .top;
       lineServiceTopPoint = this.lineService.getBoundingClientRect().top;
+
+      this.boxes.forEach((box) => {
+        boxTopPint = box.getBoundingClientRect().top;
+        if(boxTopPint <  this.$store.getters.getTriggerPoint){
+          box.classList.add('active')
+        }
+      });
 
       if (serviceContainerTopPoint < this.$store.getters.getTriggerPoint) {
         this.activeServiceContainer = true;

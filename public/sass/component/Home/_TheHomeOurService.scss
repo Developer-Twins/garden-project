@@ -27,7 +27,7 @@
     padding: 10px 25px;
     border-radius: 30px 0px 30px 0px;
     margin-top: 50px;
-    transition: all .3s;
+    transition: all 0.3s;
     &:hover {
       border-radius: 0px 30px 0px 30px;
     }
@@ -58,13 +58,20 @@
     flex-direction: row-reverse;
   }
 }
+
 .garden-home-container-img-service {
   width: 200px;
   &__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scale(0);
   }
+}
+.garden-home-box-service.active
+  .garden-home-container-img-service
+  .garden-home-container-img-service__img {
+  animation: scale-2 1s reverse forwards;
 }
 .garden-home-box-service:nth-of-type(odd) .garden-home-box-service__content {
   transform: translateX(-75px);
@@ -79,16 +86,45 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(50px);
+  @media screen and(max-width:750px) {
+    margin-top: 40px;
+  }
+  @media screen and(max-width:400px) {
+    font-size: 0.9rem;
+    width: 45%;
+  }
   &__title {
     @include font($family: "mjss", $size: 2.5em);
     margin-bottom: 15px;
     color: $light-green-2;
+    text-align: center;
   }
   &__describe {
     @include font($family: "iransens", $size: 1.7em);
     line-height: 2;
     color: $dark-black;
     text-align: justify;
+  }
+}
+.garden-home-box-service.active .garden-home-container-text-service {
+  animation: scroll-show-text 1s forwards;
+}
+.garden-home-box-service.active .garden-home-container-text-service {
+  @media screen and(max-width:750px) {
+    animation: scroll-show-text 1s 0.5s forwards;
+  }
+}
+@keyframes scroll-show-text {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 .garden-home-service__line {
