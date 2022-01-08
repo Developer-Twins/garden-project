@@ -117,6 +117,7 @@ $cotact-color: #6a961f;
       background-color: #f0f1ec;
       border-right: 3px solid $cotact-color;
       box-shadow: 0.1em 0.3rem 1.3rem rgba(0, 0, 0, 0.2) inset;
+      border-radius: 3px;
       transition: border 0.3s;
 
       &:focus {
