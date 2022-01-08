@@ -1,0 +1,113 @@
+$footer-white: #fafafa;
+$footer-green: #6a961f;
+.garden-home-footer {
+  width: 100%;
+  background-image: url("../public/gardenImages/footer-pattern.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 150px;
+  font-size: 1rem;
+  // 900px=56.25em
+  @media screen and(max-width:56.25em) {
+    font-size: 0.9rem;
+  }
+  // 600px=37.5em
+  @media screen and(max-width:37.5em) {
+    font-size: 0.8rem;
+  }
+}
+.footer-header {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  color: $footer-white;
+  // 1250px=78.12em
+  @media screen and(max-width:78.12em) {
+    width: 90%;
+  }
+  // 500px=31.25em
+  @media screen and(max-width:31.25em) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.footer-contact,
+.footer-link {
+  // 500px=31.25em
+  @media screen and(max-width:31.25em) {
+    width: 100%;
+  }
+}
+.footer-contact {
+  // 500px=31.25em
+  @media screen and(max-width:31.25em) {
+    margin-bottom: 5.5em;
+  }
+}
+.footer-title {
+  color: $footer-green;
+  @include font("iransens", 2.3em, bold);
+  padding-bottom: 0.6em;
+  border-bottom: 1.2px solid $footer-white;
+}
+.footer-list {
+  @include font("iransens", 1.8em);
+  list-style: none;
+  margin-top: 1.7em;
+}
+.footer-contact-list__item {
+  display: flex;
+  align-items: center;
+  &:not(&:last-child) {
+    margin-bottom: 1em;
+  }
+  svg {
+    margin-left: 0.7em;
+    color: $footer-green;
+  }
+}
+
+.footer-link-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer-link-list__item {
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 0.4em;
+  &:not(&:last-child) {
+    margin-bottom: 0.7em;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    transition: all 0.3s;
+    background-color: $footer-green;
+  }
+}
+.footer-footer {
+  width: 1200px;
+  padding-top: 4.5em;
+  // 1250px=78.12em
+  @media screen and(max-width:78.12em) {
+    width: 90%;
+  }
+}
+.footer-copy {
+  text-align: center;
+  border-top: 1.2px solid $footer-white;
+  padding: 2.4em 0;
+  &__text {
+    color: $footer-white;
+    @include font("sans-serif", 1.5em);
+  }
+}
