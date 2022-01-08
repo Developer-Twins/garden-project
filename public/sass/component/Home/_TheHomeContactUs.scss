@@ -1,14 +1,14 @@
 .garden-home-contact {
   background-color: #f0f1ec;
   position: relative;
-  height: 620px;
+  height: 700px;
   // 900px=56.25em
   @media screen and(max-width:56.25em) {
-    height: 520px;
+    height: 600px;
   }
   // 650px=40.62em
   @media screen and(max-width:40.62em) {
-    height: 480px;
+    height: 550px;
   }
 }
 $cotact-color: #6a961f;
