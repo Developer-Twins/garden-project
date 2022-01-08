@@ -36,12 +36,7 @@
       transition: all 0.6s 0.3s ease-out;
       //800px / 16px = 50em
       @media screen and(max-width:50em) {
-        height: 52%;
-      }
-      // 1100px=68.75em
-      @media screen and(max-width:68.75em) {
-        background-size: 101% 128%;
-
+        height: 56%;
       }
     }
     &::before {
