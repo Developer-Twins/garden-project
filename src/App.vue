@@ -1,6 +1,6 @@
 <template>
+  <nav-part></nav-part>
   <the-home></the-home>
-  <!-- <the-slider></the-slider> -->
 </template>
 
 <script>
@@ -17,11 +17,11 @@ String.prototype.toEnglishDigit = function() {
 };
 
 import TheHome from "./components/Home/TheHome.vue";
-// import TheSlider from "./components/slider.vue";
+import navPart from "./components/Nav.vue";
 export default {
   components: {
     TheHome,
-    // TheSlider,
+    navPart,
   },
 };
 </script>
